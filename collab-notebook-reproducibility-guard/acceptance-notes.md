@@ -6,7 +6,7 @@ Validation performed locally:
 - `npm test`
 - `npm run demo`
 - `npm run video`
-- `npm run check`
+- `npm run check` (syntax, tests, report generation, and demo video generation)
 - `ffprobe` on `reports/demo.mp4`
 - `git diff --check`
 

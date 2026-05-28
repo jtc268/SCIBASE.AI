@@ -21,6 +21,7 @@ The demo writes deterministic artifacts to `reports/`:
 - `warning-notebook-packet.json`
 - `clean-notebook-packet.json`
 - `notebook-reproducibility-report.md`
+- `maintainer-verification-packet.md`
 - `summary.svg`
 - `demo.mp4`
 

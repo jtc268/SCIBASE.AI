@@ -15,6 +15,7 @@ writeJson('unsafe-notebook-packet.json', unsafeReview);
 writeJson('warning-notebook-packet.json', warningReview);
 writeJson('clean-notebook-packet.json', cleanReview);
 writeMarkdownReport(unsafeReview, warningReview, cleanReview);
+writeMaintainerVerificationPacket(unsafeReview, warningReview, cleanReview);
 writeSummarySvg(unsafeReview, warningReview, cleanReview);
 
 console.log('Generated notebook reproducibility artifacts:');
@@ -22,6 +23,7 @@ console.log(`- ${path.join(reportsDir, 'unsafe-notebook-packet.json')}`);
 console.log(`- ${path.join(reportsDir, 'warning-notebook-packet.json')}`);
 console.log(`- ${path.join(reportsDir, 'clean-notebook-packet.json')}`);
 console.log(`- ${path.join(reportsDir, 'notebook-reproducibility-report.md')}`);
+console.log(`- ${path.join(reportsDir, 'maintainer-verification-packet.md')}`);
 console.log(`- ${path.join(reportsDir, 'summary.svg')}`);
 
 function writeJson(filename, value) {
@@ -53,6 +55,55 @@ function writeMarkdownReport(unsafeReview, warningReview, cleanReview) {
 function row(label, packet) {
   const summary = packet.reproducibilitySummary;
   return `| ${label} | ${packet.status} | ${summary.cells} | ${summary.blockers} | ${summary.warnings} | ${primaryAction(packet)} |`;
+}
+
+function writeMaintainerVerificationPacket(unsafeReview, warningReview, cleanReview) {
+  const blockerCodes = unsafeReview.findings
+    .filter((finding) => finding.severity === 'blocker')
+    .map((finding) => finding.code);
+  const sanitizedLoadCell = unsafeReview.cells.find((cell) => cell.id === 'cell-load-data');
+  const sanitizedModelCell = unsafeReview.cells.find((cell) => cell.id === 'cell-fit-model');
+  const lines = [
+    '# Maintainer Verification Packet',
+    '',
+    'This packet gives reviewers a compact checklist for issue #12 acceptance.',
+    '',
+    '## Acceptance Evidence',
+    '',
+    `- Unsafe packet lane: ${unsafeReview.status}`,
+    `- Warning packet lane: ${warningReview.status}`,
+    `- Clean packet lane: ${cleanReview.status}`,
+    `- Unsafe blocker count: ${unsafeReview.reproducibilitySummary.blockers}`,
+    `- Warning count: ${warningReview.reproducibilitySummary.warnings}`,
+    `- Clean accepted cells: ${cleanReview.reproducibilitySummary.cells}`,
+    '',
+    '## Guard Coverage',
+    '',
+    '| Requirement | Evidence |',
+    '| --- | --- |',
+    `| Execution-order continuity | ${blockerCodes.includes('EXECUTION_ORDER_GAP') ? 'covered by unsafe packet' : 'missing'} |`,
+    `| Dependency/version integrity | ${blockerCodes.includes('DEPENDENCY_LOCK_MISMATCH') ? 'covered by unsafe packet' : 'missing'} |`,
+    `| Random-seed capture | ${blockerCodes.includes('MISSING_RANDOM_SEED') ? 'covered by unsafe packet' : 'missing'} |`,
+    `| Input artifact fingerprints | ${blockerCodes.includes('MISSING_INPUT_FINGERPRINT') ? 'covered by unsafe packet' : 'missing'} |`,
+    `| Stale output detection | ${blockerCodes.includes('STALE_NOTEBOOK_OUTPUT') ? 'covered by unsafe packet' : 'missing'} |`,
+    `| Section-version drift | ${blockerCodes.includes('SECTION_VERSION_MISMATCH') ? 'covered by unsafe packet' : 'missing'} |`,
+    `| Rich HTML sanitization | ${sanitizedModelCell?.outputs?.[0]?.trusted === false ? 'sanitized and marked untrusted' : 'missing'} |`,
+    `| Private path redaction | ${/\[redacted-local-path]/.test(sanitizedLoadCell?.outputs?.[0]?.content || '') ? 'redacted in output packet' : 'missing'} |`,
+    '',
+    '## Deterministic Digests',
+    '',
+    `- Unsafe packet digest: ${unsafeReview.auditDigest}`,
+    `- Warning packet digest: ${warningReview.auditDigest}`,
+    `- Clean packet digest: ${cleanReview.auditDigest}`,
+    '',
+    '## Local Command',
+    '',
+    '```bash',
+    'npm run check',
+    '```'
+  ];
+
+  fs.writeFileSync(path.join(reportsDir, 'maintainer-verification-packet.md'), `${lines.join('\n')}\n`);
 }
 
 function primaryAction(packet) {

@@ -7,6 +7,7 @@
     "test": "node test.js",
     "demo": "node demo.js",
     "video": "python3 make-demo-video.py",
-    "check": "node --check index.js && node --check sample-data.js && node --check test.js && node --check demo.js"
+    "syntax": "node --check index.js && node --check sample-data.js && node --check test.js && node --check demo.js",
+    "check": "npm run syntax && npm test && npm run demo && npm run video"
   }
 }
