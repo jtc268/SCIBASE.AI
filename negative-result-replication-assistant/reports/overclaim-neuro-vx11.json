@@ -1,0 +1,147 @@
+{
+  "packetId": "overclaim-neuro-vx11",
+  "title": "Overbroad VX-11 neurodegeneration manuscript",
+  "generatedAt": "deterministic-demo",
+  "summary": {
+    "lane": "hold",
+    "averageConfidence": 0,
+    "findingCounts": {
+      "high": 4,
+      "medium": 2,
+      "low": 1
+    },
+    "claimCount": 1,
+    "reviewerActions": [
+      {
+        "claimId": "C1",
+        "code": "uncited-negative-results",
+        "severity": "high",
+        "action": "Add limitation language and cite the negative or null results."
+      },
+      {
+        "claimId": "C1",
+        "code": "overbroad-positive-claim",
+        "severity": "high",
+        "action": "Narrow the claim to the supported population, method, or setting."
+      },
+      {
+        "claimId": "C1",
+        "code": "replication-debt",
+        "severity": "high",
+        "action": "Create a replication task before promoting the claim as settled."
+      },
+      {
+        "claimId": "C1",
+        "code": "raw-data-missing",
+        "severity": "medium",
+        "action": "Request raw data or downgrade the claim to exploratory language."
+      },
+      {
+        "claimId": "C1",
+        "code": "analysis-code-missing",
+        "severity": "medium",
+        "action": "Attach analysis scripts or notebook exports before peer-review release."
+      },
+      {
+        "claimId": "C1",
+        "code": "dependency-lock-missing",
+        "severity": "low",
+        "action": "Capture package versions and runtime metadata."
+      },
+      {
+        "claimId": "C1",
+        "code": "protocol-not-preregistered",
+        "severity": "high",
+        "action": "Route to reviewer hold or relabel as hypothesis-generating."
+      }
+    ]
+  },
+  "claimResults": [
+    {
+      "claimId": "C1",
+      "claim": "VX-11 broadly improves memory across neurodegenerative disease models.",
+      "confidence": 0,
+      "evidenceIds": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "supportCount": 1,
+      "negativeCount": 2,
+      "independentReplicationCount": 0,
+      "findings": [
+        {
+          "code": "uncited-negative-results",
+          "severity": "high",
+          "claimId": "C1",
+          "evidenceIds": [
+            "E2",
+            "E3"
+          ],
+          "message": "Negative or null evidence exists but is not cited or addressed.",
+          "action": "Add limitation language and cite the negative or null results."
+        },
+        {
+          "code": "overbroad-positive-claim",
+          "severity": "high",
+          "claimId": "C1",
+          "evidenceIds": [
+            "E2",
+            "E3"
+          ],
+          "message": "Broad claim conflicts with negative or failed-replication evidence.",
+          "action": "Narrow the claim to the supported population, method, or setting."
+        },
+        {
+          "code": "replication-debt",
+          "severity": "high",
+          "claimId": "C1",
+          "message": "No positive independent replication supports this claim.",
+          "action": "Create a replication task before promoting the claim as settled."
+        },
+        {
+          "code": "raw-data-missing",
+          "severity": "medium",
+          "claimId": "C1",
+          "message": "No supporting evidence packet exposes raw data for rerun checks.",
+          "action": "Request raw data or downgrade the claim to exploratory language."
+        },
+        {
+          "code": "analysis-code-missing",
+          "severity": "medium",
+          "claimId": "C1",
+          "message": "No supporting evidence packet includes analysis code.",
+          "action": "Attach analysis scripts or notebook exports before peer-review release."
+        },
+        {
+          "code": "dependency-lock-missing",
+          "severity": "low",
+          "claimId": "C1",
+          "message": "Supporting evidence lacks an environment or dependency lock.",
+          "action": "Capture package versions and runtime metadata."
+        },
+        {
+          "code": "protocol-not-preregistered",
+          "severity": "high",
+          "claimId": "C1",
+          "message": "Confirmatory claim is not backed by preregistered evidence.",
+          "action": "Route to reviewer hold or relabel as hypothesis-generating."
+        }
+      ]
+    }
+  ],
+  "researchGapPrompts": [
+    {
+      "claimId": "C1",
+      "prompt": "Design an independent replication for: VX-11 broadly improves memory across neurodegenerative disease models.",
+      "rationale": "The current packet has negative/null signals or no independent positive replication.",
+      "suggestedMethods": [
+        "single-lab open-label pilot",
+        "external blinded replication",
+        "larger late-stage cohort"
+      ],
+      "priority": "high"
+    }
+  ],
+  "auditDigest": "fc4a35985284f15e2fc29647fda5b54a71b510c668030e141d5097622232aa46"
+}

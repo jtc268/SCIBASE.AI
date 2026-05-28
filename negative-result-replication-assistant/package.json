@@ -1,0 +1,14 @@
+{
+  "name": "negative-result-replication-assistant",
+  "version": "1.0.0",
+  "description": "Deterministic AI research assistant slice for negative-result and replication-debt review.",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "demo": "node demo.js",
+    "video": "python3 make-demo-video.py",
+    "check": "npm test && npm run demo && npm run video"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,34 @@
+{
+  "packetId": "balanced-neuro-vx11",
+  "title": "Balanced VX-11 neurocognition manuscript",
+  "generatedAt": "deterministic-demo",
+  "summary": {
+    "lane": "ready",
+    "averageConfidence": 79,
+    "findingCounts": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "claimCount": 1,
+    "reviewerActions": []
+  },
+  "claimResults": [
+    {
+      "claimId": "C1",
+      "claim": "VX-11 improves maze recall in aged mice under the high-dose protocol.",
+      "confidence": 79,
+      "evidenceIds": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "supportCount": 2,
+      "negativeCount": 1,
+      "independentReplicationCount": 1,
+      "findings": []
+    }
+  ],
+  "researchGapPrompts": [],
+  "auditDigest": "e869867d63560d5ae0354e4009145bcb808b98ec924698d0eb715d2e8dfea0bd"
+}
