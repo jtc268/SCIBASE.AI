@@ -1,0 +1,261 @@
+{
+  "packetId": "feed-neuro-lab-2026-q2",
+  "researcher": "NeuroMethods Lab",
+  "lab": "NeuroMethods Core",
+  "generatedFrom": {
+    "interestCount": 4,
+    "projectHistoryCount": 3,
+    "labMethodCount": 4,
+    "opportunityCount": 3
+  },
+  "rankedOpportunities": [
+    {
+      "id": "gap-microglia-spatial-ad",
+      "title": "Microglia state transition map in Alzheimer's spatial niches",
+      "topics": [
+        "single-cell RNA-seq",
+        "Alzheimer's",
+        "microglia",
+        "spatial transcriptomics"
+      ],
+      "score": 89,
+      "lane": "start-next",
+      "profileMatch": {
+        "interestHits": [
+          "single-cell RNA-seq",
+          "Alzheimer's",
+          "microglia",
+          "spatial transcriptomics"
+        ],
+        "historyHits": [
+          "single-cell RNA-seq"
+        ],
+        "methodHits": [
+          "single-cell RNA-seq",
+          "spatial transcriptomics",
+          "Bayesian modeling"
+        ],
+        "score": 82
+      },
+      "capability": {
+        "missingMethods": [],
+        "missingInstruments": [],
+        "missingDatasets": [],
+        "missingModelSystems": [],
+        "methodHits": [
+          "single-cell RNA-seq",
+          "spatial transcriptomics",
+          "Bayesian modeling"
+        ],
+        "instrumentHits": [
+          "10x Chromium",
+          "Visium"
+        ],
+        "datasetHits": [
+          "internal AD cohort",
+          "public AMP-AD"
+        ],
+        "modelHits": [
+          "human postmortem tissue"
+        ],
+        "score": 100
+      },
+      "feasibility": {
+        "costFit": true,
+        "timeFit": true,
+        "ethicsFit": true,
+        "safetyFit": true,
+        "score": 100
+      },
+      "evidenceStrength": 75,
+      "noveltyScore": 83,
+      "findings": [],
+      "recommendedFirstTasks": [
+        "Create one-page opportunity brief for Microglia state transition map in Alzheimer's spatial niches",
+        "Open preregistration checklist"
+      ]
+    },
+    {
+      "id": "gap-crispr-microglia-screen",
+      "title": "CRISPR perturbation screen for microglia inflammatory states",
+      "topics": [
+        "microglia",
+        "CRISPR",
+        "neuroinflammation"
+      ],
+      "score": 20,
+      "lane": "hold",
+      "profileMatch": {
+        "interestHits": [
+          "microglia"
+        ],
+        "historyHits": [
+          "neuroinflammation"
+        ],
+        "methodHits": [
+          "single-cell RNA-seq"
+        ],
+        "score": 28
+      },
+      "capability": {
+        "missingMethods": [
+          "CRISPR screen"
+        ],
+        "missingInstruments": [
+          "flow cytometer"
+        ],
+        "missingDatasets": [],
+        "missingModelSystems": [],
+        "methodHits": [
+          "single-cell RNA-seq"
+        ],
+        "instrumentHits": [
+          "10x Chromium"
+        ],
+        "datasetHits": [
+          "internal AD cohort"
+        ],
+        "modelHits": [
+          "mouse models"
+        ],
+        "score": 67
+      },
+      "feasibility": {
+        "costFit": true,
+        "timeFit": false,
+        "ethicsFit": true,
+        "safetyFit": true,
+        "score": 75
+      },
+      "evidenceStrength": 80,
+      "noveltyScore": 84,
+      "findings": [
+        {
+          "code": "method-capability-gap",
+          "severity": "high",
+          "message": "The lab does not currently support all required methods.",
+          "action": "Route to collaborator search or downgrade opportunity priority.",
+          "missingMethods": [
+            "CRISPR screen"
+          ]
+        },
+        {
+          "code": "instrument-gap",
+          "severity": "high",
+          "message": "Required instruments are not available in the lab profile.",
+          "action": "Recommend a core facility, partner lab, or alternate study design.",
+          "missingInstruments": [
+            "flow cytometer"
+          ]
+        },
+        {
+          "code": "timeline-exceeded",
+          "severity": "medium",
+          "message": "Estimated duration exceeds the lab planning window.",
+          "action": "Suggest a smaller pilot or move to long-range planning."
+        }
+      ],
+      "recommendedFirstTasks": [
+        "Find collaborator for CRISPR screen",
+        "Reserve core facility for flow cytometer"
+      ]
+    },
+    {
+      "id": "gap-ultra-high-field-imaging",
+      "title": "Ultra-high-field imaging biomarkers for early dementia",
+      "topics": [
+        "Alzheimer's",
+        "imaging biomarkers",
+        "human cohorts"
+      ],
+      "score": 0,
+      "lane": "hold",
+      "profileMatch": {
+        "interestHits": [
+          "Alzheimer's"
+        ],
+        "historyHits": [],
+        "methodHits": [
+          "Bayesian modeling"
+        ],
+        "score": 20
+      },
+      "capability": {
+        "missingMethods": [
+          "7T MRI"
+        ],
+        "missingInstruments": [
+          "7T MRI"
+        ],
+        "missingDatasets": [],
+        "missingModelSystems": [
+          "human cohorts"
+        ],
+        "methodHits": [
+          "Bayesian modeling"
+        ],
+        "instrumentHits": [],
+        "datasetHits": [
+          "internal AD cohort"
+        ],
+        "modelHits": [],
+        "score": 40
+      },
+      "feasibility": {
+        "costFit": false,
+        "timeFit": false,
+        "ethicsFit": true,
+        "safetyFit": true,
+        "score": 50
+      },
+      "evidenceStrength": 57,
+      "noveltyScore": 41,
+      "findings": [
+        {
+          "code": "method-capability-gap",
+          "severity": "high",
+          "message": "The lab does not currently support all required methods.",
+          "action": "Route to collaborator search or downgrade opportunity priority.",
+          "missingMethods": [
+            "7T MRI"
+          ]
+        },
+        {
+          "code": "instrument-gap",
+          "severity": "high",
+          "message": "Required instruments are not available in the lab profile.",
+          "action": "Recommend a core facility, partner lab, or alternate study design.",
+          "missingInstruments": [
+            "7T MRI"
+          ]
+        },
+        {
+          "code": "budget-exceeded",
+          "severity": "high",
+          "message": "Estimated opportunity cost exceeds available lab budget.",
+          "action": "Hold until grant, consortium, or low-cost pilot funding is identified."
+        },
+        {
+          "code": "timeline-exceeded",
+          "severity": "medium",
+          "message": "Estimated duration exceeds the lab planning window.",
+          "action": "Suggest a smaller pilot or move to long-range planning."
+        }
+      ],
+      "recommendedFirstTasks": [
+        "Find collaborator for 7T MRI",
+        "Reserve core facility for 7T MRI",
+        "Build low-cost pilot or grant fit note"
+      ]
+    }
+  ],
+  "summary": {
+    "startNextCount": 1,
+    "partnerBeforeStartCount": 0,
+    "watchlistCount": 0,
+    "holdCount": 2,
+    "topOpportunityId": "gap-microglia-spatial-ad",
+    "topScore": 89
+  },
+  "auditDigest": "dad5604bdb61d8fc29863f9cc629d1ceffcb941d4a6c90f4af7ec07a94ba8140"
+}

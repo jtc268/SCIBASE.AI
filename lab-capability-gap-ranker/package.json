@@ -1,0 +1,14 @@
+{
+  "name": "lab-capability-gap-ranker",
+  "version": "1.0.0",
+  "description": "Deterministic research-gap opportunity ranker using lab capabilities and project history.",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "demo": "node demo.js",
+    "video": "python3 make-demo-video.py",
+    "check": "npm test && npm run demo && npm run video"
+  },
+  "license": "MIT"
+}

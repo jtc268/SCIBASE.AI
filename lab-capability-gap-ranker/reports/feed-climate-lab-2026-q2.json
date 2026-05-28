@@ -1,0 +1,167 @@
+{
+  "packetId": "feed-climate-lab-2026-q2",
+  "researcher": "Regional Climate AI Lab",
+  "lab": "Climate Data Studio",
+  "generatedFrom": {
+    "interestCount": 3,
+    "projectHistoryCount": 3,
+    "labMethodCount": 4,
+    "opportunityCount": 2
+  },
+  "rankedOpportunities": [
+    {
+      "id": "gap-sensor-scarce-floods",
+      "title": "Flood nowcasting for sensor-scarce watersheds",
+      "topics": [
+        "flood forecasting",
+        "remote sensing",
+        "watersheds"
+      ],
+      "score": 81,
+      "lane": "start-next",
+      "profileMatch": {
+        "interestHits": [
+          "flood forecasting",
+          "remote sensing"
+        ],
+        "historyHits": [
+          "remote sensing"
+        ],
+        "methodHits": [
+          "Bayesian modeling",
+          "geospatial ML",
+          "hydrology simulation"
+        ],
+        "score": 54
+      },
+      "capability": {
+        "missingMethods": [],
+        "missingInstruments": [],
+        "missingDatasets": [],
+        "missingModelSystems": [],
+        "methodHits": [
+          "Bayesian modeling",
+          "geospatial ML",
+          "hydrology simulation"
+        ],
+        "instrumentHits": [
+          "GPU workstation",
+          "river sensor network"
+        ],
+        "datasetHits": [
+          "NOAA rainfall",
+          "Sentinel-2",
+          "regional gauge archive"
+        ],
+        "modelHits": [
+          "watersheds"
+        ],
+        "score": 100
+      },
+      "feasibility": {
+        "costFit": true,
+        "timeFit": true,
+        "ethicsFit": true,
+        "safetyFit": true,
+        "score": 100
+      },
+      "evidenceStrength": 65,
+      "noveltyScore": 78,
+      "findings": [],
+      "recommendedFirstTasks": [
+        "Create one-page opportunity brief for Flood nowcasting for sensor-scarce watersheds",
+        "Open preregistration checklist"
+      ]
+    },
+    {
+      "id": "gap-household-survey-warning",
+      "title": "Household warning response study for flood alerts",
+      "topics": [
+        "flood forecasting",
+        "social science",
+        "survey research"
+      ],
+      "score": 0,
+      "lane": "hold",
+      "profileMatch": {
+        "interestHits": [
+          "flood forecasting"
+        ],
+        "historyHits": [],
+        "methodHits": [],
+        "score": 14
+      },
+      "capability": {
+        "missingMethods": [
+          "survey research",
+          "causal inference"
+        ],
+        "missingInstruments": [],
+        "missingDatasets": [],
+        "missingModelSystems": [
+          "households"
+        ],
+        "methodHits": [],
+        "instrumentHits": [],
+        "datasetHits": [
+          "regional gauge archive"
+        ],
+        "modelHits": [],
+        "score": 25
+      },
+      "feasibility": {
+        "costFit": false,
+        "timeFit": false,
+        "ethicsFit": false,
+        "safetyFit": true,
+        "score": 25
+      },
+      "evidenceStrength": 34,
+      "noveltyScore": 76,
+      "findings": [
+        {
+          "code": "method-capability-gap",
+          "severity": "high",
+          "message": "The lab does not currently support all required methods.",
+          "action": "Route to collaborator search or downgrade opportunity priority.",
+          "missingMethods": [
+            "survey research",
+            "causal inference"
+          ]
+        },
+        {
+          "code": "budget-exceeded",
+          "severity": "high",
+          "message": "Estimated opportunity cost exceeds available lab budget.",
+          "action": "Hold until grant, consortium, or low-cost pilot funding is identified."
+        },
+        {
+          "code": "timeline-exceeded",
+          "severity": "medium",
+          "message": "Estimated duration exceeds the lab planning window.",
+          "action": "Suggest a smaller pilot or move to long-range planning."
+        },
+        {
+          "code": "ethics-approval-missing",
+          "severity": "high",
+          "message": "Human-subjects or sensitive-data approval is required but not active.",
+          "action": "Add ethics review as the first milestone before ranking this as actionable."
+        }
+      ],
+      "recommendedFirstTasks": [
+        "Find collaborator for survey research, causal inference",
+        "Build low-cost pilot or grant fit note",
+        "Draft ethics review packet"
+      ]
+    }
+  ],
+  "summary": {
+    "startNextCount": 1,
+    "partnerBeforeStartCount": 0,
+    "watchlistCount": 0,
+    "holdCount": 1,
+    "topOpportunityId": "gap-sensor-scarce-floods",
+    "topScore": 81
+  },
+  "auditDigest": "740717358bab0af673c303a65a528711c9507a9221c73920caf77f3b435a5bfe"
+}
