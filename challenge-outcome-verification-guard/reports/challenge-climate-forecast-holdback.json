@@ -1,0 +1,55 @@
+{
+  "challengeId": "challenge-climate-forecast-holdback",
+  "title": "Regional Flood Forecast Outcome Holdback",
+  "sponsor": "Climate Resilience Fund",
+  "solverTeam": "RiverCast Lab",
+  "decision": {
+    "lane": "release-final-and-bonus",
+    "releaseCents": 10000000,
+    "holdCents": 0,
+    "rationale": "Outcome packet satisfies evidence, safety, escrow, notice, and IP controls."
+  },
+  "summary": {
+    "targetCount": 2,
+    "passedTargets": 2,
+    "independentReplications": 2,
+    "findingCounts": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    }
+  },
+  "targetResults": [
+    {
+      "id": "mae-forecast",
+      "label": "Mean absolute error over holdout watersheds",
+      "threshold": 12.5,
+      "observed": 11.8,
+      "direction": "lower-is-better",
+      "status": {
+        "passed": true,
+        "driftPct": -5.6,
+        "reason": "passed"
+      },
+      "independentReplication": true,
+      "evidenceArtifactId": "forecast-holdout-notebook"
+    },
+    {
+      "id": "alert-recall",
+      "label": "Flood alert recall at local threshold",
+      "threshold": 0.82,
+      "observed": 0.86,
+      "direction": "higher-is-better",
+      "status": {
+        "passed": true,
+        "driftPct": 4.9,
+        "reason": "passed"
+      },
+      "independentReplication": true,
+      "evidenceArtifactId": "field-alert-audit"
+    }
+  ],
+  "findings": [],
+  "auditDigest": "32fd27fffeaf4199d4a1dbc87465a4f9036d9ae834bd1e576ecdb4e2f57a8768"
+}

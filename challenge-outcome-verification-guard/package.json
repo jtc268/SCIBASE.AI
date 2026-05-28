@@ -1,0 +1,14 @@
+{
+  "name": "challenge-outcome-verification-guard",
+  "version": "1.0.0",
+  "description": "Deterministic scientific bounty outcome verification and holdback guard.",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "demo": "node demo.js",
+    "video": "python3 make-demo-video.py",
+    "check": "npm test && npm run demo && npm run video"
+  },
+  "license": "MIT"
+}

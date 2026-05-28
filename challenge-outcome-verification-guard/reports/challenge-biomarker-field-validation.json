@@ -1,0 +1,154 @@
+{
+  "challengeId": "challenge-biomarker-field-validation",
+  "title": "Single-cell Biomarker Outcome Validation",
+  "sponsor": "Oncology Translational Consortium",
+  "solverTeam": "Atlas Omics",
+  "decision": {
+    "lane": "block-final-payout",
+    "releaseCents": 0,
+    "holdCents": 5000000,
+    "rationale": "Critical settlement, safety, or IP guard failed."
+  },
+  "summary": {
+    "targetCount": 2,
+    "passedTargets": 0,
+    "independentReplications": 0,
+    "findingCounts": {
+      "critical": 3,
+      "high": 6,
+      "medium": 4,
+      "low": 0
+    }
+  },
+  "targetResults": [
+    {
+      "id": "auc-external-cohort",
+      "label": "AUC on sponsor external cohort",
+      "threshold": 0.88,
+      "observed": 0.79,
+      "direction": "higher-is-better",
+      "status": {
+        "passed": false,
+        "driftPct": -10.2,
+        "reason": "metric-drift"
+      },
+      "independentReplication": false,
+      "evidenceArtifactId": "external-cohort-eval"
+    },
+    {
+      "id": "false-positive-rate",
+      "label": "False positive rate after locked threshold",
+      "threshold": 0.08,
+      "observed": 0.14,
+      "direction": "lower-is-better",
+      "status": {
+        "passed": false,
+        "driftPct": 75,
+        "reason": "metric-drift"
+      },
+      "independentReplication": false,
+      "evidenceArtifactId": "external-cohort-eval"
+    }
+  ],
+  "findings": [
+    {
+      "code": "outcome-metric-drift",
+      "severity": "high",
+      "message": "Outcome target auc-external-cohort missed its acceptance threshold.",
+      "action": "Hold the final or bonus tranche until sponsor and arbitrator review the metric drift.",
+      "targetId": "auc-external-cohort",
+      "driftPct": -10.2,
+      "reason": "metric-drift"
+    },
+    {
+      "code": "independent-replication-missing",
+      "severity": "high",
+      "message": "Outcome target auc-external-cohort lacks independent replication evidence.",
+      "action": "Require independent replication or release only non-contingent base funds.",
+      "targetId": "auc-external-cohort"
+    },
+    {
+      "code": "outcome-metric-drift",
+      "severity": "high",
+      "message": "Outcome target false-positive-rate missed its acceptance threshold.",
+      "action": "Hold the final or bonus tranche until sponsor and arbitrator review the metric drift.",
+      "targetId": "false-positive-rate",
+      "driftPct": 75,
+      "reason": "metric-drift"
+    },
+    {
+      "code": "independent-replication-missing",
+      "severity": "high",
+      "message": "Outcome target false-positive-rate lacks independent replication evidence.",
+      "action": "Require independent replication or release only non-contingent base funds.",
+      "targetId": "false-positive-rate"
+    },
+    {
+      "code": "late-artifact-unjustified",
+      "severity": "medium",
+      "message": "Evidence artifact external-cohort-eval was generated after the verification deadline.",
+      "action": "Add reviewer-visible exception notes or exclude it from payout evidence.",
+      "artifactId": "external-cohort-eval"
+    },
+    {
+      "code": "unresolved-safety-event",
+      "severity": "critical",
+      "message": "The outcome packet contains unresolved safety or adverse-event records.",
+      "action": "Block final payout and public release until safety review is closed.",
+      "eventIds": [
+        "ae-review-17"
+      ]
+    },
+    {
+      "code": "safety-attestation-missing",
+      "severity": "high",
+      "message": "Required safety or ethics attestation is missing.",
+      "action": "Hold outcome-based funds until a signed safety attestation is attached."
+    },
+    {
+      "code": "sponsor-acceptance-missing",
+      "severity": "high",
+      "message": "Sponsor acceptance is missing for the post-award outcome review.",
+      "action": "Route to arbitration or request sponsor signoff before releasing holdback funds."
+    },
+    {
+      "code": "escrow-underfunded",
+      "severity": "critical",
+      "message": "Escrow balance cannot cover the requested final and bonus outcome payout.",
+      "action": "Require sponsor top-up before releasing solver IP or final funds.",
+      "availableCents": 1000000,
+      "requiredCents": 5000000
+    },
+    {
+      "code": "ip-released-before-funded-settlement",
+      "severity": "critical",
+      "message": "Solver IP is marked released before funded settlement is available.",
+      "action": "Reinstate redactions and route the award to arbitration."
+    },
+    {
+      "code": "ip-release-policy-unclear",
+      "severity": "medium",
+      "message": "IP release terms do not explicitly bind transfer to payout.",
+      "action": "Clarify IP release terms before sponsor receives unrestricted artifacts."
+    },
+    {
+      "code": "award-notice-incomplete",
+      "severity": "medium",
+      "message": "Required outcome-review notifications have not been sent to all parties.",
+      "action": "Notify missing parties before final payout release.",
+      "missingRoles": [
+        "winner",
+        "arbitrator"
+      ]
+    },
+    {
+      "code": "verification-window-expired",
+      "severity": "medium",
+      "message": "Outcome verification exceeded the challenge window.",
+      "action": "Ask the sponsor and arbitrator to approve the late verification packet.",
+      "elapsedDays": 78,
+      "maxDays": 60
+    }
+  ],
+  "auditDigest": "48c6b7099388cf0a791247f8912fc4c3e62d59d19a7ba3ca15d4342eb076b4ce"
+}

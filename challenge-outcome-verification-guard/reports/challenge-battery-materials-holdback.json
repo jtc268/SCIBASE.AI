@@ -1,0 +1,51 @@
+{
+  "challengeId": "challenge-battery-materials-holdback",
+  "title": "Battery Separator Durability Bonus Review",
+  "sponsor": "Grid Storage Coalition",
+  "solverTeam": "Polymer Bench",
+  "decision": {
+    "lane": "release-final-with-conditions",
+    "releaseCents": 4000000,
+    "holdCents": 1000000,
+    "rationale": "Final prize may proceed with documented conditions; bonus stays held."
+  },
+  "summary": {
+    "targetCount": 1,
+    "passedTargets": 1,
+    "independentReplications": 0,
+    "findingCounts": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 0
+    }
+  },
+  "targetResults": [
+    {
+      "id": "cycle-retention",
+      "label": "Capacity retention after accelerated cycles",
+      "threshold": 0.9,
+      "observed": 0.91,
+      "direction": "higher-is-better",
+      "status": {
+        "passed": true,
+        "driftPct": 1.1,
+        "reason": "passed"
+      },
+      "independentReplication": false,
+      "evidenceArtifactId": "cycle-lab-report"
+    }
+  ],
+  "findings": [
+    {
+      "code": "award-notice-incomplete",
+      "severity": "medium",
+      "message": "Required outcome-review notifications have not been sent to all parties.",
+      "action": "Notify missing parties before final payout release.",
+      "missingRoles": [
+        "arbitrator"
+      ]
+    }
+  ],
+  "auditDigest": "3c6bdb29dcb12c16bef84c0f0a7e4d0e8c8781f33212b19bfcc4158736e2f0f7"
+}
